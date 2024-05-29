@@ -254,6 +254,7 @@ public class ProjectDao extends DaoBase {
 				setParameter(stmt, 1, projectId, Integer.class);
 				
 				boolean deleted = stmt.executeUpdate() == 1;
+				commitTransaction(conn);
 				
 				return deleted;
 			} catch (Exception e) {
